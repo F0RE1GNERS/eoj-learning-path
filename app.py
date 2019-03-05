@@ -3,7 +3,7 @@ import numpy as np
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
-model = keras.models.load_model("models/learning-path.h5")
+model = keras.models.load_model("/models/learning-path.h5")
 model._make_predict_function()
 
 
