@@ -1,4 +1,4 @@
-FROM python:3.6-alpine3.6
+FROM tensorflow/tensorflow:1.13.1
 ADD . /app
 WORKDIR /app
 RUN apk add --update --no-cache build-base && \
