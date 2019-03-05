@@ -5,6 +5,6 @@ services:
     container_name: app
     restart: always
     volumes:
-      - /home/acm/model:/app/models
+      - /home/acm/model:/models
     ports:
       - "0.0.0.0:20019:20019"
