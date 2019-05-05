@@ -3,3 +3,6 @@ Keras
 gunicorn
 gevent
 eventlet
+progressbar2
+torch
+torchvision
