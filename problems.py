@@ -39,3 +39,6 @@ def get_problems_embeddings():
   for k, v in problems.items():
     embedding_matrix[k] = v.vector
   return problems, embedding_matrix
+
+
+def get_problems_difficulty_embeddings(problems):

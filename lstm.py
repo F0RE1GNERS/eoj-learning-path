@@ -18,7 +18,9 @@ class Net(nn.Module):
     self.output_size = output_size
     self.hidden_dim = hidden_dim
     self.lstm = nn.LSTM(input_size=self.input_size, hidden_size=self.hidden_dim, batch_first=False)
-    self.embeddings = nn.Embedding.from_pretrained(embeddings)
+    embeddings_norm = embeddings.norm(p=2, dim=1, keepdim=True)
+    embeddings_normalized = embeddings.div(embeddings_norm.expand_as(embeddings))
+    self.embeddings = nn.Embedding.from_pretrained(embeddings_normalized, freeze=False)
     self.linear = nn.Linear(self.hidden_dim, self.output_size)
 
   def forward(self, input):
@@ -31,13 +33,16 @@ class Net(nn.Module):
 if __name__ == "__main__":
   device = torch.device("cuda")
   problems, embeddings = get_problems_embeddings()
+
+  difficulty =
+
   submission_seqs = get_submission_sequences(problems)
   net = Net(embeddings.shape[1], embeddings.shape[0], torch.from_numpy(embeddings).float())
   net.to(device)
   criterion = nn.CrossEntropyLoss()
   optimizer = optim.Adam(net.parameters(), lr=0.001)
 
-  for epoch in range(200):
+  for epoch in range(70):
     print("Training on epoch %d" % epoch)
     epoch_loss, epoch_acc = 0., 0.
     counter = Counter()
@@ -48,6 +53,7 @@ if __name__ == "__main__":
         outputs = net(data_gpu)
         label_output = torch.tensor(data_cpu[1:]).to(device)
         loss = criterion(outputs, label_output)
+
         loss.backward()
         optimizer.step()
 
