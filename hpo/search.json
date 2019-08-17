@@ -5,19 +5,15 @@
   },
   "max_sequence_length": {
     "_type": "choice",
-    "_value": [50, 200, 500]
+    "_value": [50, 100, 200, 500]
   },
   "representation": {
     "_type": "choice",
-    "_value": ["cnn", "lstm", "mixture"]
-  },
-  "loss": {
-    "_type": "choice",
-    "_value": ["pointwise", "bpr", "hinge", "adaptive_hinge"]
+    "_value": ["lstm", "mixture"]
   },
   "l2": {
     "_type": "choice",
-    "_value": [0, 1E-6]
+    "_value": [0, 1E-6, 1E-4]
   },
   "embedding_dim": {
     "_type": "choice",

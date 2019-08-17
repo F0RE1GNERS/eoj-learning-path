@@ -1,0 +1,16 @@
+{
+    "max_sequence_length": 200,
+    "min_sequence_length": 15,
+    "sequence_step_size": null,
+    "representation": "lstm",
+    "loss": "adaptive_hinge",
+    "batch_size": 100,
+    "learning_rate": 0.01,
+    "l2": 0,
+    "num_epochs": 80,
+    "predefined_embedding": false,
+    "predefined_embedding_freeze": false,
+    "embedding_dim": 100,
+    "num_problems": null,
+    "use_cuda": true
+}

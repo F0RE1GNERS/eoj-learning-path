@@ -21,4 +21,4 @@ def eoj_next_problem_net(params, embeddings=None):
                                  n_iter=params["num_epochs"],
                                  item_embedding_layer=embedding_layer_func if params["predefined_embedding"] else None,
                                  embedding_dim=params["embedding_dim"],
-                                 use_cuda=torch.cuda.is_available())
+                                 use_cuda=params["use_cuda"] and torch.cuda.is_available())

@@ -8,19 +8,20 @@ from preprocess import cross_validation_data, get_problems_embeddings
 from spotlight.evaluation import sequence_mrr_score
 
 params = {
-    "max_sequence_length": 500,
+    "max_sequence_length": 200,
     "min_sequence_length": 15,
     "sequence_step_size": None,
     "representation": "lstm",
     "loss": "adaptive_hinge",
     "batch_size": 100,
-    "learning_rate": 0.1,
+    "learning_rate": 0.01,
     "l2": 0,
-    "num_epochs": 50,
+    "num_epochs": 80,
     "predefined_embedding": False,
     "predefined_embedding_freeze": False,
-    "embedding_dim": 50,
-    "num_problems": None
+    "embedding_dim": 100,
+    "num_problems": None,
+    "use_cuda": True
 }
 
 
