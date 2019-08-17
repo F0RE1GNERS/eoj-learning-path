@@ -1,0 +1,26 @@
+{
+  "learning_rate": {
+    "_type": "loguniform",
+    "_value": [0.0005, 0.1]
+  },
+  "max_sequence_length": {
+    "_type": "choice",
+    "_value": [50, 200, 500]
+  },
+  "representation": {
+    "_type": "choice",
+    "_value": ["cnn", "lstm", "mixture"]
+  },
+  "loss": {
+    "_type": "choice",
+    "_value": ["pointwise", "bpr", "hinge", "adaptive_hinge"]
+  },
+  "l2": {
+    "_type": "choice",
+    "_value": [0, 1E-6]
+  },
+  "embedding_dim": {
+    "_type": "choice",
+    "_value": [50, 100, 150]
+  }
+}
