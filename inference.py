@@ -3,8 +3,10 @@ import torch
 
 
 def load_model():
-    return torch.load("checkpoints/model_best.pth.tar",
-                      map_location=torch.device('cpu'))
+    loaded = torch.load("checkpoints/model_best.pth.tar",
+                        map_location=torch.device('cpu'))
+    loaded._use_cuda = False
+    return loaded
 
 
 model = load_model()
