@@ -26,7 +26,9 @@ are working on that.
 
 ### Quantitative Study
 
-Our best model has reached xxx and xxx on cross validation.
+Our best model has reached 0.1983 MRR score on cross validation.
+
+The API call speed is about 10 ms per call, which is enough for 100 QPS theoretically.
 
 ### Qualitative Study
 
