@@ -1,14 +1,10 @@
-import json
-
 import numpy as np
 import torch
 
-from model import eoj_next_problem_net
-from preprocess import get_problems_embeddings
-
 
 def load_model():
-    return torch.load("checkpoints/model_best.pth.tar")
+    return torch.load("checkpoints/model_best.pth.tar",
+                      map_location=torch.device('cpu'))
 
 
 model = load_model()
