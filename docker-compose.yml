@@ -8,3 +8,12 @@ services:
       - /home/acm/model:/app/checkpoints
     ports:
       - "0.0.0.0:20019:20019"
+    networks:
+      eoj-learning-path-internal:
+networks:
+  eoj-learning-path-internal:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.255.2.0/24
