@@ -1,7 +1,7 @@
 version: "3"
 services:
   app:
-    image: registry.cn-shanghai.aliyuncs.com/ultmaster/eoj-learning-path:latest
+    image: registry.cn-shanghai.aliyuncs.com/ultmaster/eoj-learning-path:spotlight
     container_name: app
     restart: always
     volumes:
