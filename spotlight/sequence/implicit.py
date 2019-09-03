@@ -340,3 +340,7 @@ class ImplicitSequenceModel(object):
                         item_var)
 
         return cpu(out).detach().numpy().flatten()
+
+    @property
+    def num_items(self):
+        return self._num_items

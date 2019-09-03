@@ -21,5 +21,8 @@ def inference(sequence):
     there could be duplicates between prediction and input;
     there could be non-existing problems.
     """
-    sequence = np.expand_dims(np.array(sequence), 0)
+    preproc = list(filter(lambda d: 0 < d < model.num_items, sequence))
+    if not preproc:
+        preproc = [1]
+    sequence = np.expand_dims(np.array(preproc), 0)
     return np.argsort(model.predict(sequence)).tolist()
